@@ -1,1 +1,35 @@
-
+1. Creates a simple AngularJS application with a controller
+This code creates a simple AngularJS application with a controller (myController). It contains an input field to enter a number and 
+displays the squared value of that number using two-way data binding provided by AngularJS.
+To run this code, create two files named index.html and app.js. Place the respective code blocks in each file. Then, open 
+index.html in a web browser. You'll see an input field where you can enter a number, and the squared value of that number will be 
+displayed in real-time below it.
+HTML (index.html):
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+ <title>AngularJS MVC Example</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+ <script src="app.js"></script>
+</head>
+<body ng-controller="myController">
+ <h1>AngularJS MVC Example</h1>
+ <div>
+ <label>Enter a number: </label>
+ <input type="number" ng-model="numberInput" ng-change="updateResult()">
+ </div>
+ <div>
+ <p>Number entered: {{ numberInput }}</p>
+ <p>Squared value: {{ squaredValue }}</p>
+ </div>
+</body>
+</html>
+JavaScript (app.js):
+var myApp = angular.module('myApp', []);
+myApp.controller('myController', function($scope) {
+ $scope.numberInput = 0;
+ $scope.squaredValue = 0;
+ $scope.updateResult = function() {
+ $scope.squaredValue = $scope.numberInput * $scope.numberInput;
+ };
+});
