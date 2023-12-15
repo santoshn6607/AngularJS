@@ -1,10 +1,4 @@
-1. Creates a simple AngularJS application with a controller
-This code creates a simple AngularJS application with a controller (myController). It contains an input field to enter a number and 
-displays the squared value of that number using two-way data binding provided by AngularJS.
-To run this code, create two files named index.html and app.js. Place the respective code blocks in each file. Then, open 
-index.html in a web browser. You'll see an input field where you can enter a number, and the squared value of that number will be 
-displayed in real-time below it.
-HTML (index.html):
+
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
