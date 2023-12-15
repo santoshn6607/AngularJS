@@ -1,0 +1,32 @@
+HTML (index.html):
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+ <title>AngularJS Expressions, Directives, and Controllers Example</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+ <script src="app.js"></script>
+</head>
+<body ng-controller="myController">
+ <h1>AngularJS Expressions, Directives, and Controllers</h1>
+ <div>
+ <p>Welcome, {{ username }}!</p>
+ <p ng-show="showMessage">You have {{ messages.length }} new messages!</p>
+ <ul>
+ <li ng-repeat="message in messages">{{ message }}</li>
+ </ul>
+ <button ng-click="showMessages()">Show Messages</button>
+ </div>
+</body>
+</html>
+
+JavaScript (app.js):
+var myApp = angular.module('myApp', []);
+myApp.controller('myController', function($scope) {
+ $scope.username = "User123";
+ $scope.showMessage = false;
+ $scope.messages = [];
+ $scope.showMessages = function() {
+ $scope.messages = ["Message 1", "Message 2", "Message 3"];
+ $scope.showMessage = true;
+ };
+});
